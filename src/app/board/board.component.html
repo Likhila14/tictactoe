@@ -1,0 +1,26 @@
+<div style="text-align:center">
+<h1>TIC TAC TOE</h1>
+<div *ngIf= "player1turn" class="big">player1 turn</div>
+<div *ngIf= "player2turn" class="big">player2 turn</div>
+
+<div class="box">
+  <p>
+
+
+  </p>
+<mat-grid-list cols="3" rowHeight="1:1">
+  <mat-grid-tile
+      *ngFor="let tile of tiles; let i = index"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+      (click)="setMove(i)">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+</div>
+
+<div *ngIf = "player1winner" class="big"> player 1 is  the winner!!</div>
+<div *ngIf = "player2winner" class="big">player 2 is the winner!!</div>
+<div *ngIf = "tie" class="big">TIE</div>
+</div>
